@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Star Citizen Tools and Information.">
+
+    <script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.json.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.bracket.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery.bracket.min.css" />
+
+
+    <title>See you in the Verse!</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/marketing.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="">BritizenCon 2017: Dogfighting Tournament</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="https://robertsspaceindustries.com/enlist?referral=STAR-DLML-6LDN" class="pure-menu-link">SYITV</a></li>
+            <li class="pure-menu-item"><a href="https://robertsspaceindustries.com/orgs/NOTA" class="pure-menu-link">NOTA</a></li>
+            <li class="pure-menu-item"><a href="http://www.devops.expert" class="pure-menu-link">TIDZO</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+
+
+ <div class="pure-g">
+
+	<div class="pure-u-5-5">
+
+	 	<div id='mybracket'>
+	 	</div>
+
+
+		<script>
+
+
+
+		    $.ajax({ type: 'GET',
+			 url: 'read_data.php',
+			 success: function(receivedData){
+
+			    initData=JSON.parse(receivedData);
+
+			    $('#mybracket').bracket({
+				init: initData,
+				teamWidth: 100,
+				scoreWidth: 20,
+				matchMargin:40,
+				roundMargin: 50,
+				centerConnectors: true
+			      });
+		 
+			 }
+		       }
+		      )
+
+		</script>
+
+	</div>
+
+    </div>
+</div>
+
+<div style="font-size:70%; font-style:italic;">
+Built by <a href="http://www.devops.expert">Matt Saunders</a> using <a href="http://www.aropupu.fi/bracket/">jQuery Bracket</a> and <a href="https://purecss.io">Pure CSS</a>
+</div>
+
+
+</body>
+</html>
